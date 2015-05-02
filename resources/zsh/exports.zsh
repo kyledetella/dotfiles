@@ -8,8 +8,8 @@ export HISTSIZE=10000
 export SAVEHIST=9000
 
 export CLICOLOR=1
-export LS_COLORS='di=30;46:tw=30;46:ow=30;46:ex=31:su=31:sg=31:'
-export LSCOLORS='afxxxxxxbxxxxxbxbxagag'
+# export LS_COLORS='di=34;40:ln=35;40:so=32;40:pi=33;40:ex=0;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
+# export LSCOLORS='exfxcxdxaxegedabagacad'
 
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='00;36'
