@@ -1,0 +1,19 @@
+if [[ -z "$PS1" ]]; then
+  return # quit for non-interactive shells
+fi
+
+source "$HOME/.zsh/exports.zsh"
+
+source "$HOME/.zsh/aliases.zsh"
+
+source "$HOME/.bash/prompt"
+
+if [[ "$(uname -s)" = 'Linux' ]]; then
+  source "$HOME/.zsh/debian.zsh"
+elif [[ "$(uname -s)" = 'Darwin' ]]; then
+  source "$HOME/.zsh/osx.zsh"
+fi
+
+if [[ -e "$HOME/.bashrc_local" ]]; then
+  source "$HOME/.bashrc_local"
+fi

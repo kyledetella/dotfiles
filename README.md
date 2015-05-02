@@ -1,0 +1,19 @@
+dotfiles
+========
+
+A collection of my dotfiles and configurations mostly based off of [Evan Hahn's dotfiles](https://github.com/EvanHahn/dotfiles/)
+
+## Setup
+
+```sh
+# clone this repo
+script/symlink.sh
+
+# if on OSX
+script/osx-settings.sh
+
+# if on Debian
+sudo apt-get install ruby -y
+
+script/packages.rb
+```
