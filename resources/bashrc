@@ -8,6 +8,8 @@ source "$HOME/.zsh/aliases.zsh"
 
 source "$HOME/.bash/prompt"
 
+source "$HOME/.functions"
+
 if [[ "$(uname -s)" = 'Linux' ]]; then
   source "$HOME/.zsh/debian.zsh"
 elif [[ "$(uname -s)" = 'Darwin' ]]; then
