@@ -29,9 +29,6 @@ defaults write com.apple.screensaver 'askForPasswordDelay' -int 5
 # menu bar should be transparent
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool true
 
-# heroic error sound effects
-defaults write com.apple.systemsound 'com.apple.sound.beep.sound' -string '/System/Library/Sounds/Hero.aiff'
-
 # light up that keyboard, dark after 60 secnods
 defaults write com.apple.BezelServices kDim -bool true
 defaults write com.apple.BezelServices kDimTime -int 60
