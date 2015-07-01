@@ -1,7 +1,10 @@
 ## Prompt
 
-_bash_prompt_config() {
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
 
+_bash_prompt_config() {
     if $SHELL_BASH; then
         local USER_SYMBOL="\u"
         local HOST_SYMBOL="\h"
@@ -14,7 +17,6 @@ _bash_prompt_config() {
         local ESC_OPEN="%{"
         local ESC_CLOSE="%}"
     fi
-
 
     if tput setaf >/dev/null 2>&1 ; then
         _setaf () { tput setaf "$1" ; }
@@ -91,13 +93,7 @@ bash_prompt_command() {
         P_EXIT+="${P_RED}✘ "
     fi
 
-    # PS1="${P_EXIT}${P_USER}${P_YELLOW}@${P_HOST} ${P_YELLOW}${P_PWD}${P_GREEN}${P_GIT}${P_YELLOW} ❯ ${P_RESET}"
-    PS1="${P_EXIT}${P_USER}${P_YELLOW} ${P_YELLOW}${P_PWD}${P_GREEN}${P_GIT}${P_YELLOW} ❯ ${P_RESET}"
-}
-
-parse_git_branch() {
-    local OUT=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
-    if [ "$OUT" != "" ]; then echo " $OUT"; fi
+    PS1='\[\033[01;32m\]\u@\h:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;32m\]$(parse_git_branch)\[\033[00m\]\$ '
 }
 
 _bash_prompt_config

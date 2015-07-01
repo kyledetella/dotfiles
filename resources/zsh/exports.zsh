@@ -26,6 +26,18 @@ fi
 export USE_EDITOR="$EDITOR"
 export VISUAL="$EDITOR"
 
+if hash vimpager 2>/dev/null; then
+  export PAGER=vimpager
+elif hash most 2>/dev/null; then
+  export PAGER=most
+elif hash less 2>/dev/null; then
+  export PAGER=less
+elif hash more 2>/dev/null; then
+  export PAGER=more
+else
+  export PAGER=cat
+fi
+
 if hash less 2>/dev/null; then
   export LESS='--ignore-case --long-prompt --QUIET --raw-control-chars --no-init'
 fi
