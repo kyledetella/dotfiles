@@ -17,6 +17,12 @@ alias code='cd ~/code'
 alias db='cd ~/Dropbox'
 alias dbc='cd ~/Dropbox/code'
 
+# System aliases
+# via: https://www.digitalocean.com/community/tutorials/an-introduction-to-useful-bash-aliases-and-functions
+# alias ps="ps ax"
+alias psg="ps ax | grep -v grep | grep -i -e VSZ -e"
+alias du="du -ach | sort -h"
+
 alias q='exit'
 
 alias bell='tput bel'
