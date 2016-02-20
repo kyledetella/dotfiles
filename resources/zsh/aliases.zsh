@@ -14,6 +14,8 @@ alias gc='git checkout'
 alias gcm='git checkout master'
 
 alias code='cd ~/code'
+alias init='cd ~/init'
+alias dots='cd ~/code/dotfiles'
 alias db='cd ~/Dropbox'
 alias dbc='cd ~/Dropbox/code'
 
