@@ -69,6 +69,7 @@ BREWS = [
   'git --with-brewed-curl --with-brewed-openssl --with-brewed-svn',
   'python',
   'ruby',
+  'bash-git-prompt',
   'vim --with-client-server --with-lua',
   'zsh',
 
