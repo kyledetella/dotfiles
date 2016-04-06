@@ -7,8 +7,13 @@ source ~/.nvm/nvm.sh
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH=$PATH:~/bin
-export GOPATH=$HOME/code/go
+export GOPATH=$HOME/go
 export ANDROID_HOME=/usr/local/opt/android-sdk
+# add rabbitmq binaries to your PATH
+export PATH=$PATH:/usr/local/sbin
+
+# add go binaries to your PATH
+export PATH=$PATH:$GOPATH/bin
 
 source "$HOME/.zsh/exports.zsh"
 
