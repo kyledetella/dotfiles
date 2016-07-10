@@ -11,6 +11,7 @@ script/symlink.sh
 
 # if on OSX
 script/osx-settings.sh
+script/setup
 
 # if on Debian
 sudo apt-get install ruby -y

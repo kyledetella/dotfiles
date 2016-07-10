@@ -6,8 +6,45 @@ if &shell == "/usr/bin/sudosh"
   set shell=/bin/bash
 endif
 
+" Setup vimplug
+call plug#begin('~/.vim/plugged')
+
+" Import plugins
+"
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+Plug 'benekastah/neomake', {'commit': '645c433b73f527badaac5e315f1ea16e7d34ef99'}
+Plug 'bkad/CamelCaseMotion', {'commit': '3ae9bf93cce28ddc1f2776999ad516e153769ea4'}
+Plug 'cespare/vim-toml', {'commit': 'f6f79f3cc6740dfacca73a195857cbc45e778912'}
+Plug 'ctrlpvim/ctrlp.vim', {'commit': '31b3aca71a626cae116b7ecd3e5ceb3f7bddb5a6'}
+Plug 'elixir-lang/vim-elixir', {'commit': '1cfd5ab992b61bc30041950641eb577066269ee5'}
+Plug 'fatih/vim-go', {'tag': 'v1.4'}
+Plug 'jlanzarotta/bufexplorer', {'tag': 'v7.4.6'}
+Plug 'jtratner/vim-flavored-markdown', {'commit': '4a70aa2e0b98d20940a65ac38b6e9acc69c6b7a0'}
+Plug 'janko-m/vim-test', {'commit': 'f82d3b3388b2b462e59b073c6380f9428206e218'}
+Plug 'lambdatoast/elm.vim', {'commit': '5f8c518cb0c0d3dc9a54a5074b618f897ee34ef9'}
+
+" JS
+Plug 'pangloss/vim-javascript', {'commit': '1d8c2677d26d6b3950b90dc1636e63334c8efc3b'}
+Plug 'mxw/vim-jsx'
+
+Plug 'mattn/emmet-vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'rodjek/vim-puppet', {'commit': 'd881b93dc4a8ed1374ad44439aeeb47808a6b91a'}
+Plug 'rust-lang/rust.vim', {'commit': 'e651851c7455286f0ba42c46777e9677c68796ac'}
+Plug 'scrooloose/nerdtree', {'tag': '5.0.0', 'on':  'NERDTreeToggle'}
+Plug 'tomtom/tcomment_vim', {'tag': '3.08'}
+Plug 'tpope/vim-endwise', {'commit': '0067ceda37725d01b7bd5bf249d63b1b5d4e2ab4', 'for': ['ruby']}
+Plug 'tpope/vim-fugitive', {'commit': '008b9570860f552534109b4f618cf2ddd145eeb4'}
+Plug 'tpope/vim-ragtag', {'commit': '0ef3f6a5778467fbca12b7874a4509593b209228'}
+Plug 'tpope/vim-rails', {'commit': 'abf87ba2ebe07e1a4112a7921c06842070ef2f81'}
+Plug 'udalov/kotlin-vim', {'commit': '0b0f27133319aaa83776855aeb32ac620eb99b3f'}
+Plug 'vim-erlang/vim-erlang-runtime', {'commit': 'bafee7c69b23cc2923fda9ac16d6f83433645f30'}
+Plug 'vim-ruby/vim-ruby', {'commit': '666adb5bcdfb2d21572a58fcdf7545a26bac32a0'}
+Plug 'vim-scripts/matchit.zip', {'tag': '1.9'}
+
+call plug#end()
+
 " filetype off
-call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
 
@@ -133,11 +170,11 @@ let g:netrw_banner = 0
 
 let g:VimuxUseNearestPane = 1
 
-let g:CommandTMaxHeight = 15
-let g:CommandTMatchWindowAtTop = 1
-let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
-let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
-let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
+" let g:CommandTMaxHeight = 15
+" let g:CommandTMatchWindowAtTop = 1
+" let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
+" let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
+" let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
 
 " ========= Shortcuts ========
 
@@ -146,10 +183,19 @@ map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
 map <silent> <LocalLeader>nr :NERDTree<CR>
 map <silent> <LocalLeader>nf :NERDTreeFind<CR>
 
-" CommandT
-map <silent> <leader>ff :CommandT<CR>
-map <silent> <leader>fb :CommandTBuffer<CR>
-map <silent> <leader>fr :CommandTFlush<CR>
+" VimTest
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+
+" Use CommandT shortcuts for CtrlP
+map <silent> <leader>ff :CtrlP<CR>
+
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 " Ack
 map <LocalLeader>aw :Ack '<C-R><C-W>'
@@ -251,7 +297,7 @@ function! __Edge()
   set autoread
 
   map <leader>nf :e%:h<CR>
-  map <C-p> :CommandT<CR>
+  " map <C-p> :CommandT<CR>
 
   let g:VimuxOrientation = "h"
   let g:VimuxHeight = "40"
