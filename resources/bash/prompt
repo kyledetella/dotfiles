@@ -65,7 +65,6 @@ _bash_prompt_config() {
 }
 
 bash_prompt_command() {
-
     local EXIT_CODE=$?
     local P_EXIT=""
     local MAXLENGTH=35

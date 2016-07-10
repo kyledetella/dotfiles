@@ -23,11 +23,12 @@ source "$HOME/.bash/prompt"
 
 source "$HOME/.functions"
 
-if [[ "$(uname -s)" = 'Linux' ]]; then
-  source "$HOME/.zsh/debian.zsh"
-elif [[ "$(uname -s)" = 'Darwin' ]]; then
-  source "$HOME/.zsh/osx.zsh"
-fi
+# if [[ "$(uname -s)" = 'Linux' ]]; then
+#   source "$HOME/.zsh/debian.zsh"
+# elif [[ "$(uname -s)" = 'Darwin' ]]; then
+#   source "$HOME/.zsh/osx.zsh"
+# fi
+# source ~/.zshrc
 
 if [[ -e "$HOME/.bashrc_local" ]]; then
   source "$HOME/.bashrc_local"
