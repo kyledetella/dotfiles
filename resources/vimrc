@@ -28,7 +28,11 @@ Plug 'pangloss/vim-javascript', {'commit': '1d8c2677d26d6b3950b90dc1636e63334c8e
 Plug 'mxw/vim-jsx'
 
 Plug 'mattn/emmet-vim'
+
+" Color schemes
 Plug 'flazz/vim-colorschemes'
+Plug 'chriskempson/base16-vim'
+
 Plug 'rodjek/vim-puppet', {'commit': 'd881b93dc4a8ed1374ad44439aeeb47808a6b91a'}
 Plug 'rust-lang/rust.vim', {'commit': 'e651851c7455286f0ba42c46777e9677c68796ac'}
 Plug 'scrooloose/nerdtree', {'tag': '5.0.0', 'on':  'NERDTreeToggle'}
@@ -77,11 +81,11 @@ endif
 set undolevels=1000 "maximum number of changes that can be undone
 
 " Color
-colorscheme iceberg
+colorscheme base16-default-dark
 
-au FileType diff colorscheme iceberg
-au FileType git colorscheme iceberg
-au BufWinLeave * colorscheme iceberg
+au FileType diff colorscheme base16-default-dark
+au FileType git colorscheme base16-default-dark
+au BufWinLeave * colorscheme base16-default-dark
 
 augroup markdown
   au!
