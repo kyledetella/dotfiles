@@ -27,6 +27,9 @@ Plug 'lambdatoast/elm.vim', {'commit': '5f8c518cb0c0d3dc9a54a5074b618f897ee34ef9
 Plug 'pangloss/vim-javascript', {'commit': '1d8c2677d26d6b3950b90dc1636e63334c8efc3b'}
 Plug 'mxw/vim-jsx'
 
+" Go
+Plug 'fatih/vim-go'
+
 Plug 'mattn/emmet-vim'
 
 " Color schemes
@@ -72,6 +75,8 @@ set ignorecase
 set smartcase
 set wildignore+=*.pyc,*.o,*.class,*.lo,.git,vendor/,node_modules*
 set noswapfile
+set visualbell
+set t_vb=
 
 if version >= 703
   set undodir=~/.vim/undodir
@@ -103,6 +108,8 @@ autocmd BufNewFile,BufRead *.txt setlocal textwidth=78
 
 autocmd BufNewFile,BufRead *.json set ft=javascript
 autocmd BufNewFile,BufRead .jshintrc set ft=javascript
+
+autocmd BufNewFile,BufRead *.proto set ft=go
 
 " Add syntact highlighting for Handlebars templates
 autocmd BufNewFile,BufRead *.hbs set ft=html
