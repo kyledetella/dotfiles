@@ -16,7 +16,7 @@ alias gcm='git checkout master'
 alias bbq='cd ~/init/projects/bbq'
 alias code='cd ~/code'
 alias init='cd ~/init'
-alias console='cd ~/init/cpconsole && nvm use'
+alias console='cd ~/init/console && nvm use'
 alias cli='cd ~/init/cli && nvm use'
 alias csi='cd ~/init/csi && nvm use'
 alias docs='cd ~/init/documentation'
@@ -29,6 +29,8 @@ alias tools='cd ~/go/src/github.com/init-ai/toolbox'
 alias dots='cd ~/code/dotfiles'
 alias db='cd ~/Dropbox'
 alias dbc='cd ~/Dropbox/code'
+alias ks='cd ~/init/k8s'
+alias prj='cd ~/init/projects'
 
 # System aliases
 # via: https://www.digitalocean.com/community/tutorials/an-introduction-to-useful-bash-aliases-and-functions
