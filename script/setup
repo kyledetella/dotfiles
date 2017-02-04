@@ -2,6 +2,7 @@
 
 set -e
 set -u
+set -o pipefail
 
 # Install vim-piug
 echo "Installing vim-plug"
@@ -13,3 +14,5 @@ curl -fLo \
   ~/.vim/autoload/plug.vim \
   --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+vim -e +PlugInstall +PlugUpgrade +PlugUpdate +PlugClean! +qall
