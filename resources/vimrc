@@ -49,6 +49,9 @@ Plug 'vim-erlang/vim-erlang-runtime', {'commit': 'bafee7c69b23cc2923fda9ac16d6f8
 Plug 'vim-ruby/vim-ruby', {'commit': '666adb5bcdfb2d21572a58fcdf7545a26bac32a0'}
 Plug 'vim-scripts/matchit.zip', {'tag': '1.9'}
 
+" Docker
+Plug 'ekalinin/dockerfile.vim'
+
 call plug#end()
 
 " filetype off
